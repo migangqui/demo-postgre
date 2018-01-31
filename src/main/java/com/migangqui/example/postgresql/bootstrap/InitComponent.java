@@ -38,9 +38,8 @@ public class InitComponent {
 
 		if (insertData) {
 
-			log.info("Inserting data");
-			
 			if (env.getProperty("data.delete", boolean.class)) {
+				log.info("Deleting data");
 				eventRepository.deleteAll();
 			}
 
@@ -49,6 +48,8 @@ public class InitComponent {
 			
 			int quantityTotal = env.getProperty("data.quantity.total", int.class);
 			int quantityFind = env.getProperty("data.quantity.find", int.class);
+			
+			log.info("Inserting data");
 			
 			for (int i = 0; i < quantityTotal; i++) {
 
