@@ -44,8 +44,12 @@ public class PostgreConfig {
 		try {
 			entityManager.createNativeQuery("CREATE INDEX event_gix ON event USING GIST(location)").getSingleResult();
 		} catch (PersistenceException e) {
-			if (existGeoIndex())
+			if (existGeoIndex()) {
 				log.debug("Index created");
+			} else {
+				log.error("Index has not be able to be created");
+				System.exit(0);
+			}
 		}
 
 	}
