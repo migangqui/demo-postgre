@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Configuration
-public class PostgreConfig {
+public class PostgisConfig {
 
 	@Autowired
 	private EntityManager entityManager;
@@ -21,7 +21,7 @@ public class PostgreConfig {
 	public void checkGeoIndex() {
 		log.info("Checking indexes");
 		if (existGeoIndex()) {
-			log.debug("All indexed created");
+			log.debug("All indexed are created");
 		} else {
 			createIndexes();
 		}
