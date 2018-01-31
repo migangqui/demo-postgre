@@ -6,10 +6,10 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.DependsOn;
-import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 import com.migangqui.example.entity.Event;
+import com.migangqui.example.props.IPropertiesService;
 import com.migangqui.example.repository.EventRepository;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.GeometryFactory;
@@ -26,19 +26,17 @@ public class InitComponent {
 	private EventRepository eventRepository;
 
 	@Autowired
-	private Environment env;
+	private IPropertiesService porpertiesService;
 
 	private GeometryFactory geometryFactory = new GeometryFactory();
 
 	@PostConstruct
 	public void init() {
-		boolean insertData = env.getProperty("data.insert", boolean.class);
-
 		long startTime = System.currentTimeMillis();
 
-		if (insertData) {
+		if (porpertiesService.insertData()) {
 
-			if (env.getProperty("data.delete", boolean.class)) {
+			if (porpertiesService.deleteData()) {
 				log.info("Deleting data");
 				eventRepository.deleteAll();
 			}
@@ -46,12 +44,9 @@ public class InitComponent {
 			log.info("Total object in db {}", eventRepository.count());
 			Event event;
 			
-			int quantityTotal = env.getProperty("data.quantity.total", int.class);
-			int quantityFind = env.getProperty("data.quantity.find", int.class);
-			
 			log.info("Inserting data");
 			
-			for (int i = 0; i < quantityTotal; i++) {
+			for (int i = 0; i < porpertiesService.getTotalData(); i++) {
 
 				log.info("Registering event A and B {}", i + 1);
 
@@ -69,7 +64,7 @@ public class InitComponent {
 
 			}
 
-			for (int i = 0; i < quantityFind; i++) {
+			for (int i = 0; i < porpertiesService.getFoundData(); i++) {
 
 				log.info("Registering event C {}", i + 1);
 
