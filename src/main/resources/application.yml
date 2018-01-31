@@ -10,3 +10,9 @@ spring:
 logging:
   level:
     com.migangqui.example: debug
+data:
+  quantity:
+    total: 1000
+    find: 100
+  insert: false
+  delete: false
