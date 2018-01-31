@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
-@DependsOn(value = "postgreConfig")
+@DependsOn(value = "postgisConfig")
 public class InitComponent {
 
 	@Autowired

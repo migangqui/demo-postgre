@@ -27,7 +27,7 @@ public class PostgisConfig {
 		}
 	}
 
-	/* Private methods */
+	/* Ancillary methods */
 	
 	private boolean existGeoIndex() {
 		boolean result = false;
@@ -51,7 +51,6 @@ public class PostgisConfig {
 				System.exit(0);
 			}
 		}
-
 	}
 
 }
