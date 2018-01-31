@@ -1,4 +1,4 @@
-package com.migangqui.example.postgresql.entity;
+package com.migangqui.example.entity;
 
 import javax.persistence.*;
 

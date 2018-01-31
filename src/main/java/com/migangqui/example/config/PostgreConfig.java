@@ -1,4 +1,4 @@
-package com.migangqui.example.postgresql.config;
+package com.migangqui.example.config;
 
 import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;

@@ -1,4 +1,4 @@
-package com.migangqui.example.postgresql.bootstrap;
+package com.migangqui.example.bootstrap;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.context.annotation.DependsOn;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
-import com.migangqui.example.postgresql.entity.Event;
-import com.migangqui.example.postgresql.repository.EventRepository;
+import com.migangqui.example.entity.Event;
+import com.migangqui.example.repository.EventRepository;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.util.GeometricShapeFactory;
