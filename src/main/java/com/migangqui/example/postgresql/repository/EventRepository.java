@@ -12,5 +12,5 @@ public interface EventRepository extends JpaRepository<Event, Long> {
 	
 	@Query(value = "select e from Event e where within(e.location, ?1) = true")
 	List<Event> findByLocationWithIn(Polygon polygon);
-
+	
 }
