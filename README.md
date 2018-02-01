@@ -1,5 +1,5 @@
-# Spring-PostGIS Demo Project GEO
-Spring + PostgreSQL/PostGIS project to test geo queries performance.
+# Spring-JPA-PostGIS Demo Project GEO
+Spring + JPA + PostgreSQL/PostGIS project to test geo queries performance.
 
 ## Introduction
 This project is prepared to test performance of geo queries with a [PostGIS](https://postgis.net/) database.
