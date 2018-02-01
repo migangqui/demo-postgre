@@ -1,3 +1,6 @@
+# Spring-PostGIS Demo Project GEO
+Spring + PostgreSQL/PostGIS project to test geo queries performance.
+
 # PostGIS docker
 docker run --name some-postgis -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres@123 -e POSTGRES_DB=springbootdb -d mdillon/postgis
 
